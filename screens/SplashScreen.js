@@ -7,18 +7,23 @@ import {
   alert,
   StyleSheet,
   Image,
+  TouchableOpacity,
 } from "react-native";
+import SignInScreen from "./SignInScreen";
+import LinearGradient from "react-native-linear-gradient";
+import { createStackNavigator } from "@react-navigation/stack";
 
-const SplashScreen = () => {
+//import navigation from " ";
+//LinearGradient
+// import LinearGradient from "react-native-linear-gradient";
+// //Icon
+// import MaterialIcons from "react-native-vector-icons/MaterialIcons";
+
+const SplashScreen = ({ navigation }) => {
   return (
-    <View style={Styles.container}>
-      <Text>SplashScreen</Text>
-      <Button title="Click Here" onPress={() => alert("Button Clicked!")} />
-
-      <View style={Styles.container}>
-        <View style={Styles.header}>
-          <Text>Headere</Text>
-
+    <View style={styles.container}>
+      <View style={styles.container}>
+        <View style={styles.header}>
           <Image // logo in the header
             source={require("../image/logo.png")}
             style={styles.logo}
@@ -27,11 +32,24 @@ const SplashScreen = () => {
         </View>
       </View>
 
-      <View style={Styles.container}>
-        <View style={Styles.header}>
-          <Text>Footer</Text>
-          <Text>Movie Reviews For Every One</Text>
-          <Text>Sighn in with acount</Text>
+      <View style={styles.container}>
+        <View style={styles.footer}>
+          <Text style={styles.title}>Movie Reviews For Every One</Text>
+          <Text style={styles.text}>Sign in with account</Text>
+
+          <View style={styles.Button}>
+            <TouchableOpacity
+              onPress={() => navigation.navigate("SignInScreen")}
+            >
+              <Text style={styles.textSign}>Get Started</Text>
+            </TouchableOpacity>
+          </View>
+
+          {/* <TouchableOpacity onPress={}>
+            <LinearGradient>
+              <Text>Get Started</Text>
+            </LinearGradient>
+          </TouchableOpacity> */}
         </View>
       </View>
     </View>
@@ -88,7 +106,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
   },
   textSign: {
-    color: "white",
+    color: "black",
     fontWeight: "bold",
   },
 });

@@ -3,7 +3,7 @@ import { View, Text, Button, StyleSheet, alert } from "react-native";
 
 const SignUpScreen = () => {
   return (
-    <View style={Styles.container}>
+    <View style={styles.container}>
       <Text>SignUpScreen</Text>
       <Button title="Click Here" onPress={() => alert("Button Clicked!")} />
     </View>

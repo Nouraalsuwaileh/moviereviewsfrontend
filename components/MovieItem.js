@@ -15,14 +15,14 @@ import {
   MovieItemStyled,
 } from "../styles";
 
-const MovieItem = ({ movie,navigation }) => {
+const MovieItem = ({ movie, navigation }) => {
   return (
     <>
-      <ListItem onPress={() => navigation.navigate("MovieDetails", {movie: movie})}>
+      <ListItem
+        onPress={() => navigation.navigate("Movie Details", { movie: movie })}
+      >
         <MovieImage source={{ uri: movie.image }} />
-        <MovieItemStyled>
-           {movie.name}
-        </MovieItemStyled>
+        <MovieItemStyled>{movie.name}</MovieItemStyled>
       </ListItem>
     </>
   );

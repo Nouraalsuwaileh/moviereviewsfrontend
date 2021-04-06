@@ -5,6 +5,7 @@ import { observer } from "mobx-react";
 import React from "react";
 import { Text, View, Button, Alert } from "react-native";
 import AddButton from "../buttons/AddButtom";
+import { ButtonStyled, CreateButtonStyled, MovieItemStyled } from "../styles";
 
 const MovieList = ({ navigation }) => {
   if (movieStore.loading) return <Text>Loading...</Text>;
@@ -14,9 +15,19 @@ const MovieList = ({ navigation }) => {
   return (
     <View>
       <Button
-        title="Add Movie"
+        title="Test Button"
+        color="#e4bad4"
         onPress={() => Alert.alert("Simple Button pressed")}
       />
+
+      <Button
+        onPress={() => navigation.navigate("New Movie Form")}
+        title="Create Movie"
+        color="#e4bad4"
+      >
+        Add Movie!
+      </Button>
+
       <List>{movieList}</List>
       {/* <AddButton/> */}
     </View>

@@ -1,6 +1,5 @@
 import styled from "styled-components/native";
 
-
 export const HomeBackground = styled.ImageBackground`
   flex: 1;
   width: 100%;
@@ -53,19 +52,20 @@ export const MovieItemStyled = styled.Text`
   width: 100%;
 `;
 
-export const CreateButtonStyled = styled.Text`
-/* font-size: 1;
-  margin: 1.25; */
-  padding: 2 ;
-  border-radius: 3;
-  color: ${(props) => props.theme.backgroundColor};
-  background-color: ${(props) => props.theme.mainColor};
-
-  &:hover {
-    color: ${(props) => props.theme.mainColor};
-    background-color: ${(props) => props.theme.backgroundColor};
-  }
-`;
+// export const CreateButtonStyled = styled.Button`
+//   /* font-size: 1;
+//   margin: 1.25; */
+//   /* padding: 2; */
+//   /* border-radius: 3;
+//   background-color: pink;
+//   color: black; */
+//   /* color: ${(props) => props.theme.backgroundColor};
+//   background-color: ${(props) => props.theme.mainColor}; */
+//   /* &:hover {
+//     color: ${(props) => props.theme.mainColor};
+//     background-color: ${(props) => props.theme.backgroundColor};
+//   } */
+// `;
 
 export const MovieDetailWrapper = styled.View`
   margin-top: 50;
@@ -81,9 +81,7 @@ export const MovieDetailImage = styled.Image`
 export const MovieDetailTitle = styled.Text`
   font-weight: bold;
   font-size: 40;
-  text-align:center;
+  text-align: center;
 `;
 
-export const MovieContent = styled.Text`
-  
-`;
+export const MovieContent = styled.Text``;

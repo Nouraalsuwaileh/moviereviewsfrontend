@@ -12,7 +12,7 @@ import {
   ButtonStyled,
 } from "../styles";
 
-const Home = () => {
+const Home = ({ navigation }) => {
   return (
     <HomeBackground
       source={{
@@ -25,9 +25,9 @@ const Home = () => {
           <Title>RevFlix</Title>
         </TopStyling>
         <BottomStyling>
-          {/* <ButtonStyled onPress={() => alert("Take me to the list of movies!")}>
-            I'm a button!
-          </ButtonStyled> */}
+        <ButtonStyled onPress={() => navigation.navigate("MovieList")}>
+  Movie List
+</ButtonStyled>
         </BottomStyling>
       </OverLayContainer>
     </HomeBackground>

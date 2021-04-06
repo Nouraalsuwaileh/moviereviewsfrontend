@@ -1,12 +1,16 @@
 import { StatusBar } from "expo-status-bar";
 import React from "react";
 import { StyleSheet, Text, View, Button } from "react-native";
-// import { NavigationContainer } from "@react-navigation/native";
+import { NavigationContainer } from "@react-navigation/native";
 // import { List } from "native-base";
 import Home from "./components/Home";
 import { ThemeProvider } from "styled-components";
 import MovieList from "./components/MovieList";
 import movieStore from "./stores/movieStore";
+import { Switch } from "native-base";
+import MovieDetails from "./components/MovieDetails";
+import { createStackNavigator } from "@react-navigation/stack";
+
 
 // const moviesTestArray = [
 //   {
@@ -47,20 +51,30 @@ const theme = {
     red: "#ff3232",
   },
 };
+const Stack = createStackNavigator();
+console.log("App -> Stack", Stack);
+const { Navigator, Screen } = createStackNavigator();
 
 export default function App() {
   return (
     // <NavigationContainer>
-    <View style={styles.container}>
+    
       <ThemeProvider theme={theme.dark}>
-        <Home />
-        <MovieList movies={movieStore.movies} />
+        <NavigationContainer>
+        <Navigator initialRouteName="Home">
+        <Screen name="Home" component={Home} options={{ headerShown: false }} />
+        <Screen name="MovieDetails" component={MovieDetails} />
+        <Screen name="MovieList" component={MovieList} />
+        {/* <MovieList movies={movieStore.movies} /> */}
         {/* <MovieList movies={moviesTestArray} /> */}
-        <Text> App.js: list rendered above</Text>
+        {/* <MovieDetails/> */}
+        </Navigator>
+        </NavigationContainer> 
       </ThemeProvider>
-      <StatusBar style="auto" />
-    </View>
-    /* </NavigationContainer> */
+
+      // {/* <StatusBar style="auto" /> */}
+    
+     
   );
 }
 

@@ -3,17 +3,24 @@ import MovieItem from "./MovieItem";
 import { List, Content } from "native-base";
 import { observer } from "mobx-react";
 import React from "react";
-import { Text, View } from "react-native";
+import { Text, View, Button } from "react-native";
+import AddButton from "../buttons/AddButtom";
 
-const MovieList = ({ movies }) => {
+
+const MovieList = ({ navigation }) => {
   if (movieStore.loading) return <Text>Loading...</Text>;
-  const movieList = movies.map((movie) => (
-    <MovieItem movie={movie} key={movie.id} />
+  const movieList = movieStore.movies.map((movie) => (
+    <MovieItem movie={movie} key={movie.id} navigation={navigation} />
   ));
   return (
     <View>
+         <Button
+        title="Add Movie"
+        onPress={() => Alert.alert('Simple Button pressed')}
+      />
       <List>{movieList}</List>
-      <Text>list rendered here</Text>
+      {/* <AddButton/> */}
+   
     </View>
   );
 };

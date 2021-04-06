@@ -1,21 +1,88 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StatusBar } from "expo-status-bar";
+import React from "react";
+import { StyleSheet, Text, View, Button } from "react-native";
+import { NavigationContainer } from "@react-navigation/native";
+// import { List } from "native-base";
+import Home from "./components/Home";
+import { ThemeProvider } from "styled-components";
+import MovieList from "./components/MovieList";
+import movieStore from "./stores/movieStore";
+import { Switch } from "native-base";
+import MovieDetails from "./components/MovieDetails";
+import { createStackNavigator } from "@react-navigation/stack";
+
+
+// const moviesTestArray = [
+//   {
+//     name: "Home Alone",
+//     image: "https://alwafd.org/images/images/14(645).jpg",
+//     year: 1993,
+//     genre: "comedy",
+//     description: "comedy Story",
+//     rating: 9,
+//     userId: 1,
+//   },
+
+//   {
+//     name: "Home Alone 2",
+//     image: "https://alwafd.org/images/images/14(645).jpg",
+//     year: 1993,
+//     genre: "comedy",
+//     description: "comedy Story",
+//     rating: 9,
+//     userId: 2,
+//   },
+// ];
+
+const theme = {
+  light: {
+    mainColor: "darkred", // main font color
+    backgroundColor: "white", // main background color
+    otherColor: "grey",
+    buttonTitle: "Dark Mode",
+    red: "#ff3232",
+  },
+
+  dark: {
+    mainColor: "#fefafb", // main font color
+    backgroundColor: "#242424", // main background color
+    otherColor: "grey",
+    buttonTitle: "Light Mode",
+    red: "#ff3232",
+  },
+};
+const Stack = createStackNavigator();
+console.log("App -> Stack", Stack);
+const { Navigator, Screen } = createStackNavigator();
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    // <NavigationContainer>
+    
+      <ThemeProvider theme={theme.dark}>
+        <NavigationContainer>
+        <Navigator initialRouteName="Home">
+        <Screen name="Home" component={Home} options={{ headerShown: false }} />
+        <Screen name="MovieDetails" component={MovieDetails} />
+        <Screen name="MovieList" component={MovieList} />
+        {/* <MovieList movies={movieStore.movies} /> */}
+        {/* <MovieList movies={moviesTestArray} /> */}
+        {/* <MovieDetails/> */}
+        </Navigator>
+        </NavigationContainer> 
+      </ThemeProvider>
+
+      // {/* <StatusBar style="auto" /> */}
+    
+     
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center",
   },
 });

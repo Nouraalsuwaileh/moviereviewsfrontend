@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useReducer } from "react";
 import { SafeAreaView, StyleSheet, TextInput, Button } from "react-native";
 import movieStore from "../stores/movieStore";
 // import { CreateButtonStyled } from "../styles";
@@ -17,31 +18,22 @@ const NewMovieForm = () => {
   //     setMovie({ ...movie, [event.target.name]: event.target.value });
   //   };
 
-  const handleChange = () => {
-    setMovie({
-      ...movie,
-      name: movie.name,
-      image: movie.image,
-      year: +movie.year,
-      genre: movie.genre,
-      description: movie.description,
-      rating: +movie.rating,
-    });
-  };
-
-  //   const handleChange = (text) => {
-  //     setMovie({ ...movie, : value });
-  //   };
+  // const handleChange = () => {
+  //   setMovie({
+  //     ...movie,
+  //     name: movie.name,
+  //     image: movie.image,
+  //     year: +movie.year,
+  //     genre: movie.genre,
+  //     description: movie.description,
+  //     rating: +movie.rating,
+  //   });
+  // };
 
   //   const handleSubmit = (event) => {
   //     event.preventDefault();
   //     movieStore.createMovie(movie);
-  //     // closeModal();
   //   };
-
-  // const todoInputHandler = (newTodo) => {
-  //   setNewTodoItem(newTodo);
-  // };
 
   return (
     <SafeAreaView>
@@ -49,7 +41,7 @@ const NewMovieForm = () => {
         style={styles.input}
         placeholder="Movie Name"
         placeholderTextColor={"#808080"}
-        onChangeText={handleChange}
+        onChangeText={(value) => setMovie({ ...movie, name: value })}
         value={movie.name}
         autoCorrect={false}
       />
@@ -58,7 +50,7 @@ const NewMovieForm = () => {
         style={styles.input}
         placeholder="Movie Poster URL"
         placeholderTextColor={"#808080"}
-        onChangeText={handleChange}
+        onChangeText={(value) => setMovie({ ...movie, image: value })}
         value={movie.image}
         autoCorrect={false}
       />
@@ -67,7 +59,7 @@ const NewMovieForm = () => {
         style={styles.input}
         placeholder="Year Released"
         placeholderTextColor={"#808080"}
-        onChangeText={handleChange}
+        onChangeText={(value) => setMovie({ ...movie, year: +value })}
         value={movie.year}
         autoCorrect={false}
         keyboardType="numeric"
@@ -77,7 +69,7 @@ const NewMovieForm = () => {
         style={styles.input}
         placeholder="Genre"
         placeholderTextColor={"#808080"}
-        onChangeText={handleChange}
+        onChangeText={(value) => setMovie({ ...movie, genre: value })}
         value={movie.genre}
         autoCorrect={false}
       />
@@ -85,8 +77,7 @@ const NewMovieForm = () => {
       <TextInput
         multiline
         numberOfLines={4}
-        onChangeText={handleChange}
-        // onChangeText={(text) => onChangeText(text)}
+        onChangeText={(value) => setMovie({ ...movie, description: value })}
         value={movie.description}
       />
 
@@ -94,7 +85,7 @@ const NewMovieForm = () => {
         style={styles.input}
         placeholder="Rating"
         placeholderTextColor={"#808080"}
-        onChangeText={handleChange}
+        onChangeText={(value) => setMovie({ ...movie, rating: +value })}
         value={movie.rating}
         autoCorrect={false}
         keyboardType="numeric"

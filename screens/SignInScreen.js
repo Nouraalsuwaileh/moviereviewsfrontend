@@ -28,13 +28,13 @@ const SignInScreen = ({ navigation }) => {
         <Text style={styles.text_header}>Welcome!</Text>
       </View>
       <View style={styles.footer}>
-        <Text style={styles.text_footer}>Email</Text>
+        <Text style={styles.text_footer}>Username</Text>
         <View style={styles.action}>
           <Feather name="user" size={24} color="black" />
           {/* <FontAwesome style={styles.iconStyle} icon={SolidIcons.user} /> */}
           <TextInput /// input
             onChangeText={(value) => setUser({ ...user, username: value })}
-            placeholder="Your Email"
+            placeholder="Your Username"
             style={styles.textInput}
             autoCapitalize="no
             ne"

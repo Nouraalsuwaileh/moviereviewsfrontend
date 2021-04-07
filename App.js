@@ -64,8 +64,8 @@ export default function App() {
     <ThemeProvider theme={theme.dark}>
       <NavigationContainer>
         <RootStackScreen />
-        <Navigator initialRouteName="Home">
-          <Screen
+        {/* <Navigator initialRouteName="Home"> */}
+        {/* <Screen
             name="Home"
             component={Home}
             options={{ headerShown: false }}
@@ -73,11 +73,11 @@ export default function App() {
           <Screen name="Movie Details" component={MovieDetails} />
           <Screen name="Movie List" component={MovieList} />
           <Screen name="New Movie Form" component={NewMovieForm} />
-          <Screen name="New Review Form" component={NewReviewForm} />
-          {/* <MovieList movies={movieStore.movies} /> */}
-          {/* <MovieList movies={moviesTestArray} /> */}
-          {/* <MovieDetails/> */}
-        </Navigator>
+          <Screen name="New Review Form" component={NewReviewForm} /> */}
+        {/* <MovieList movies={movieStore.movies} /> */}
+        {/* <MovieList movies={moviesTestArray} /> */}
+        {/* <MovieDetails/> */}
+        {/* </Navigator> */}
       </NavigationContainer>
     </ThemeProvider>
 

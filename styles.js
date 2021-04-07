@@ -70,7 +70,6 @@ export const MovieItemStyled = styled.Text`
 export const MovieDetailWrapper = styled.View`
   /* margin-top: 70; */
   /* margin-bottom: 35; */
-  
 `;
 
 export const MovieDetailImage = styled.Image`

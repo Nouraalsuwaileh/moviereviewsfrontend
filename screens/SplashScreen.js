@@ -10,8 +10,8 @@ import {
   TouchableOpacity,
 } from "react-native";
 import SignInScreen from "./SignInScreen";
-import LinearGradient from "react-native-linear-gradient";
 import { createStackNavigator } from "@react-navigation/stack";
+import { HomeBackground } from "../styles";
 
 //import navigation from " ";
 //LinearGradient
@@ -24,24 +24,30 @@ const SplashScreen = ({ navigation }) => {
     <View style={styles.container}>
       <View style={styles.container}>
         <View style={styles.header}>
-          <Image // logo in the header
-            source={require("../image/logo.png")}
-            style={styles.logo}
-            resizeMode="stretch"
+          <HomeBackground
+            source={require("../image/background.jpg")}
+            // style={styles.logo}
+            // resizeMode="stretch"
           />
         </View>
       </View>
 
       <View style={styles.container}>
         <View style={styles.footer}>
-          <Text style={styles.title}>Movie Reviews For Every One</Text>
+          {/* <Text style={styles.title}>Movie Reviews For Every One</Text> */}
           <Text style={styles.text}>Sign in with account</Text>
+
+          <View style={styles.Button}>
+            <TouchableOpacity onPress={() => navigation.navigate("Movie List")}>
+              <Text style={styles.textSign}>Read Reviews</Text>
+            </TouchableOpacity>
+          </View>
 
           <View style={styles.Button}>
             <TouchableOpacity
               onPress={() => navigation.navigate("SignInScreen")}
             >
-              <Text style={styles.textSign}>Get Started</Text>
+              <Text style={styles.textSign}>Post your own!</Text>
             </TouchableOpacity>
           </View>
 

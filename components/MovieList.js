@@ -14,11 +14,11 @@ const MovieList = ({ navigation }) => {
   ));
   return (
     <View>
-      <Button
+      {/* <Button
         title="Test Button"
         color="#e4bad4"
         onPress={() => Alert.alert("Simple Button pressed")}
-      />
+      /> */}
 
       <Button
         onPress={() => navigation.navigate("New Movie Form")}

@@ -4,7 +4,7 @@ import { SafeAreaView, StyleSheet, TextInput, Button } from "react-native";
 import movieStore from "../stores/movieStore";
 // import { CreateButtonStyled } from "../styles";
 
-const NewMovieForm = () => {
+const NewMovieForm = ({ navigation }) => {
   const [movie, setMovie] = useState({
     name: "",
     image: "",
@@ -93,7 +93,10 @@ const NewMovieForm = () => {
       <Button
         title="Save New Movie"
         color="#e4bad4"
-        onPress={() => movieStore.createMovie(movie)}
+        onPress={() => {
+          movieStore.createMovie(movie);
+          navigation.goBack();
+        }}
       />
     </SafeAreaView>
   );

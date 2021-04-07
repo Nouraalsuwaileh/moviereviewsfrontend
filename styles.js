@@ -7,9 +7,9 @@ export const HomeBackground = styled.ImageBackground`
 `;
 
 export const MovieImage = styled.Image`
-  width: 75;
-  height: 75;
-  margin-left: 50;
+  width: 120;
+  height: 120;
+  margin-left: 20;
 `;
 
 export const TopStyling = styled.View`
@@ -68,7 +68,9 @@ export const MovieItemStyled = styled.Text`
 // `;
 
 export const MovieDetailWrapper = styled.View`
-  margin-top: 50;
+  /* margin-top: 70; */
+  /* margin-bottom: 35; */
+  
 `;
 
 export const MovieDetailImage = styled.Image`
@@ -76,6 +78,7 @@ export const MovieDetailImage = styled.Image`
   height: 150;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 20;
 `;
 
 export const MovieDetailTitle = styled.Text`

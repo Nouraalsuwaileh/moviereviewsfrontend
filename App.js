@@ -10,7 +10,7 @@ import movieStore from "./stores/movieStore";
 import { Switch } from "native-base";
 import MovieDetails from "./components/MovieDetails";
 import { createStackNavigator } from "@react-navigation/stack";
-
+import NewMovieForm from "./components/NewMovieForm";
 
 // const moviesTestArray = [
 //   {
@@ -58,23 +58,27 @@ const { Navigator, Screen } = createStackNavigator();
 export default function App() {
   return (
     // <NavigationContainer>
-    
-      <ThemeProvider theme={theme.dark}>
-        <NavigationContainer>
-        <Navigator initialRouteName="Home">
-        <Screen name="Home" component={Home} options={{ headerShown: false }} />
-        <Screen name="MovieDetails" component={MovieDetails} />
-        <Screen name="MovieList" component={MovieList} />
-        {/* <MovieList movies={movieStore.movies} /> */}
-        {/* <MovieList movies={moviesTestArray} /> */}
-        {/* <MovieDetails/> */}
-        </Navigator>
-        </NavigationContainer> 
-      </ThemeProvider>
 
-      // {/* <StatusBar style="auto" /> */}
-    
-     
+    <ThemeProvider theme={theme.dark}>
+      <NavigationContainer>
+        <Navigator initialRouteName="Home">
+          <Screen
+            name="Home"
+            component={Home}
+            options={{ headerShown: false }}
+          />
+          <Screen name="Movie Details" component={MovieDetails} />
+          <Screen name="Movie List" component={MovieList} />
+          <Screen name="New Movie Form" component={NewMovieForm} />
+
+          {/* <MovieList movies={movieStore.movies} /> */}
+          {/* <MovieList movies={moviesTestArray} /> */}
+          {/* <MovieDetails/> */}
+        </Navigator>
+      </NavigationContainer>
+    </ThemeProvider>
+
+    // {/* <StatusBar style="auto" /> */}
   );
 }
 

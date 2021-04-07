@@ -25,9 +25,9 @@ const Home = ({ navigation }) => {
           <Title>RevFlix</Title>
         </TopStyling>
         <BottomStyling>
-        <ButtonStyled onPress={() => navigation.navigate("MovieList")}>
-  Movie List
-</ButtonStyled>
+          <ButtonStyled onPress={() => navigation.navigate("Movie List")}>
+            Movie List
+          </ButtonStyled>
         </BottomStyling>
       </OverLayContainer>
     </HomeBackground>

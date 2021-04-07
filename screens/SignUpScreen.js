@@ -12,7 +12,9 @@ import Feather from "react-native-vector-icons/Feather";
 import { Entypo } from "@expo/vector-icons";
 
 import { useState } from "react";
-const SignInScreen = ({ navigation }) => {
+import authStore from "../components/authentication/authStore";
+
+const SignUpScreen = ({ navigation }) => {
   const [user, setUser] = useState({
     username: "",
     password: "",
@@ -69,7 +71,25 @@ const SignInScreen = ({ navigation }) => {
         </View>
 
         <View style={styles.button}>
-          <Text style={[styles.textSign, { color: " #fff" }]}>Sign Up</Text>
+          {/* <Text style={[styles.textSign, { color: " #fff" }]}>Sign Up</Text> */}
+          <TouchableOpacity
+            // onPress={() => navigation.goBack()}
+            onPress={() => {
+              // authStore.signup(user);
+              // navigation.navigate("Home");
+              navigation.goBack();
+            }}
+            style={[
+              styles.signIn,
+              {
+                borderColor: "009387",
+                borderWidth: 1,
+                marginTop: 15,
+              },
+            ]}
+          >
+            <Text style={[styles.textSign, { color: "#00937" }]}>Sign Up</Text>
+          </TouchableOpacity>
           <TouchableOpacity
             onPress={() => navigation.navigate("SignInScreen")}
             style={[
@@ -89,7 +109,7 @@ const SignInScreen = ({ navigation }) => {
   );
 };
 
-export default SignInScreen;
+export default SignUpScreen;
 
 const styles = StyleSheet.create({
   container: {

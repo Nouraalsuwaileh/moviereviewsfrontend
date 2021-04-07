@@ -11,7 +11,7 @@ import { Switch } from "native-base";
 import MovieDetails from "./components/MovieDetails";
 import { createStackNavigator } from "@react-navigation/stack";
 import NewMovieForm from "./components/NewMovieForm";
-
+import NewReviewForm from "./components/NewReviewForm";
 // const moviesTestArray = [
 //   {
 //     name: "Home Alone",
@@ -70,7 +70,7 @@ export default function App() {
           <Screen name="Movie Details" component={MovieDetails} />
           <Screen name="Movie List" component={MovieList} />
           <Screen name="New Movie Form" component={NewMovieForm} />
-
+          <Screen name="New Review Form" component={NewReviewForm} />
           {/* <MovieList movies={movieStore.movies} /> */}
           {/* <MovieList movies={moviesTestArray} /> */}
           {/* <MovieDetails/> */}

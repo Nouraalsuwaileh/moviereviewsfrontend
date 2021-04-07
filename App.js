@@ -1,6 +1,5 @@
-import { StatusBar } from "expo-status-bar";
 import React from "react";
-import { StyleSheet, Text, View, Button } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 // import { List } from "native-base";
 import Home from "./components/Home";
@@ -11,6 +10,9 @@ import { Switch } from "native-base";
 import MovieDetails from "./components/MovieDetails";
 import { createStackNavigator } from "@react-navigation/stack";
 import NewMovieForm from "./components/NewMovieForm";
+
+// import screen
+import RootStackScreen from "./screens/RootStackScreen";
 
 // const moviesTestArray = [
 //   {
@@ -61,6 +63,7 @@ export default function App() {
 
     <ThemeProvider theme={theme.dark}>
       <NavigationContainer>
+        <RootStackScreen />
         <Navigator initialRouteName="Home">
           <Screen
             name="Home"
@@ -81,12 +84,3 @@ export default function App() {
     // {/* <StatusBar style="auto" /> */}
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});

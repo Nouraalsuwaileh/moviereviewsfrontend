@@ -92,7 +92,7 @@ const NewMovieForm = ({ navigation }) => {
       />
       <Button
         title="Save New Movie"
-        color="#e4bad4"
+        color="#8d063e"
         onPress={() => {
           movieStore.createMovie(movie);
           navigation.goBack();

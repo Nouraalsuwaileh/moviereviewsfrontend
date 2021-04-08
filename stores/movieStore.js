@@ -1,6 +1,7 @@
 import { makeAutoObservable } from "mobx";
 import axios from "axios";
 import { configure } from "mobx";
+// import { getNextId } from "mobx/dist/internal";
 
 //MobX strict mode error fix, from https://stackoverflow.com/questions/64770762/mobx-since-strict-mode-is-enabled-changing-observed-observable-values-withou
 configure({
@@ -51,6 +52,7 @@ class MovieStore {
       console.log("MovieStore -> createMovie -> this.movies", this.movies);
     } catch (error) {
       console.error("MovieStore -> createMovie -> error", error);
+      // next(error);
     }
   };
 

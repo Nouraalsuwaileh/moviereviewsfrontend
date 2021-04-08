@@ -43,7 +43,7 @@ const NewReviewForm = ({ route, navigation }) => {
 
       <Button
         title="Save New Review"
-        color="#e4bad4"
+        color="#8d063e"
         onPress={() => {
           movieStore.createReview(review);
           navigation.goBack();

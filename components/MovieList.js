@@ -3,7 +3,14 @@ import MovieItem from "./MovieItem";
 import { List, Content } from "native-base";
 import { observer } from "mobx-react";
 import React from "react";
-import { Text, View, Button, Alert } from "react-native";
+import {
+  Text,
+  View,
+  Button,
+  Alert,
+  ScrollView,
+  SafeAreaView,
+} from "react-native";
 import AddButton from "../buttons/AddButtom";
 import { ButtonStyled, CreateButtonStyled, MovieItemStyled } from "../styles";
 
@@ -14,22 +21,16 @@ const MovieList = ({ navigation }) => {
   ));
   return (
     <View>
-      {/* <Button
-        title="Test Button"
-        color="#e4bad4"
-        onPress={() => Alert.alert("Simple Button pressed")}
-      /> */}
-
-      <Button
-        onPress={() => navigation.navigate("New Movie Form")}
-        title="Create Movie"
-        color="#e4bad4"
-      >
-        Add Movie!
-      </Button>
-
-      <List>{movieList}</List>
-      {/* <AddButton/> */}
+      <ScrollView>
+        <Button
+          onPress={() => navigation.navigate("New Movie Form")}
+          title="Create Movie"
+          color="#8d063e"
+        >
+          Add Movie!
+        </Button>
+        <List>{movieList}</List>
+      </ScrollView>
     </View>
   );
 };

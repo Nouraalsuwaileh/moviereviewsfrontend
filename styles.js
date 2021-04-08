@@ -44,7 +44,7 @@ export const ButtonStyled = styled.Text`
 export const MovieItemStyled = styled.Text`
   /* color: ${(props) => props.theme.mainColor}; */
   color: #8d063e;
-  font-size: 18;
+  font-size: 15;
   margin-top: 10;
   margin-bottom: 10;
   margin-left: 10;

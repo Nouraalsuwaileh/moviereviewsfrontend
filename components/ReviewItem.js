@@ -18,7 +18,9 @@ const ReviewItem = ({ review, navigation }) => {
         >
           Delete Review!
         </Button>
+        <Text> {review.user.username}</Text>
         <MovieItemStyled>{review.content}</MovieItemStyled>
+
         {/* <Button
         onPress= {()=> movieStore.deleteReview(review.id, navigation)}
         title="Delete Movie"

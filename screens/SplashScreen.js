@@ -8,6 +8,7 @@ import {
   StyleSheet,
   Image,
   TouchableOpacity,
+  Keyboard,
 } from "react-native";
 import SignInScreen from "./SignInScreen";
 import { createStackNavigator } from "@react-navigation/stack";
@@ -41,13 +42,13 @@ const SplashScreen = ({ navigation }) => {
         {/* <Text style={styles.text}>Sign in with account</Text> */}
         <View style={styles.Button}>
           <TouchableOpacity onPress={() => navigation.navigate("Movie List")}>
-            <Text style={styles.textSign}>Read Reviews</Text>
+            <Text style={styles.textSign}>READ REVIEWS</Text>
           </TouchableOpacity>
         </View>
 
         <View style={styles.Button}>
           <TouchableOpacity onPress={() => navigation.navigate("SignInScreen")}>
-            <Text style={styles.textSign}>Post your own!</Text>
+            <Text style={styles.textSign}>POST YOUR OWN</Text>
           </TouchableOpacity>
         </View>
 
@@ -115,10 +116,10 @@ const styles = StyleSheet.create({
     alignItems: "flex-end",
     margin: 10,
     padding: 7,
-    borderWidth: 3,
+    borderWidth: 2,
     borderRadius: 10,
     borderColor: "#324e73",
-    backgroundColor: "#99a7b9",
+    backgroundColor: "#a1bfbf",
     marginLeft: 50,
   },
   signIn: {
@@ -131,8 +132,9 @@ const styles = StyleSheet.create({
   },
   textSign: {
     color: "#324e73",
-    fontWeight: "bold",
+    // fontWeight: "bold",
     marginTop: 5,
-    fontSize: 25,
+    fontSize: 22,
+    fontFamily: "serif",
   },
 });

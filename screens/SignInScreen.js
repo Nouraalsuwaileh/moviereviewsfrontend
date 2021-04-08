@@ -16,6 +16,7 @@ import Feather from "react-native-vector-icons/Feather";
 import { Entypo } from "@expo/vector-icons";
 
 import { useState } from "react";
+import authStore from "../components/authentication/authStore";
 const SignInScreen = ({ navigation }) => {
   const [user, setUser] = useState({
     username: "",
@@ -56,7 +57,23 @@ const SignInScreen = ({ navigation }) => {
           {/* <Feather name="check-circle" color="green" size={20} /> */}
         </View>
         <View style={styles.button}>
-          <Text style={[styles.textSign, { color: " #fff" }]}>Sign In</Text>
+          {/* <Text style={[styles.textSign, { color: " #fff" }]}>Sign In</Text> */}
+          <TouchableOpacity
+            onPress={() => {
+              authStore.signin(user);
+              navigation.navigate("Movie List");
+            }}
+            style={[
+              styles.signIn,
+              {
+                borderColor: "009387",
+                borderWidth: 1,
+                marginTop: 15,
+              },
+            ]}
+          >
+            <Text style={[styles.textSign, { color: "#00937" }]}>Sign In</Text>
+          </TouchableOpacity>
           <TouchableOpacity
             onPress={() => navigation.navigate("SignUpScreen")}
             style={[

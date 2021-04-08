@@ -75,7 +75,7 @@ const SignUpScreen = ({ navigation }) => {
           <TouchableOpacity
             // onPress={() => navigation.goBack()}
             onPress={() => {
-              // authStore.signup(user);
+              authStore.signup(user);
               // navigation.navigate("Home");
               navigation.navigate("Movie List");
             }}

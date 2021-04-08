@@ -19,7 +19,7 @@ class MovieStore {
 
   fetchMovies = async () => {
     try {
-      const res = await axios.get("http://192.168.8.115:8000/movies");
+      const res = await axios.get("http://192.168.8.114:8000/movies");
       this.movies = res.data;
       this.loading = false;
       console.log("fetchMovies response", res.data);
@@ -30,7 +30,7 @@ class MovieStore {
 
   fetchReviews = async () => {
     try {
-      const res = await axios.get("http://192.168.8.115:8000/reviews");
+      const res = await axios.get("http://192.168.8.114:8000/reviews");
       this.reviews = res.data;
       this.loadingreviews = false;
       console.log("fetchReviews response", res.data);
@@ -42,7 +42,7 @@ class MovieStore {
   createMovie = async (newMovie) => {
     try {
       const res = await axios.post(
-        "http://192.168.8.115:8000/movies",
+        "http://192.168.8.114:8000/movies",
         newMovie
       );
       res.data.user = { id: newMovie.userId }; //change when auth is added
@@ -57,7 +57,7 @@ class MovieStore {
   createReview = async (newReview) => {
     try {
       const res = await axios.post(
-        "http://192.168.8.115:8000/reviews",
+        "http://192.168.8.114:8000/reviews",
         newReview
       );
       this.fetchReviews();
@@ -74,7 +74,7 @@ class MovieStore {
     console.log(movieId);
     try {
       let res = await axios.delete(
-        `http://192.168.8.115:8000/movies/${movieId}`
+        `http://192.168.8.114:8000/movies/${movieId}`
       );
       console.log(res);
       this.movies = this.movies.filter((movie) => movie.id !== movieId);
@@ -86,7 +86,7 @@ class MovieStore {
 
   deleteReview = async (reviewId) => {
     try {
-      await axios.delete(`http://192.168.8.115:8000/reviews/${reviewId}`);
+      await axios.delete(`http://192.168.8.114:8000/reviews/${reviewId}`);
       this.reviews = this.reviews.filter((review) => review.id !== reviewId);
     } catch (error) {
       console.error("MovieStore -> deleteReview-> error", error);

@@ -3,7 +3,7 @@ import ReviewItem from "./ReviewItem";
 import { List, Content } from "native-base";
 import { observer } from "mobx-react";
 import React from "react";
-import { Text, View, Button, Alert } from "react-native";
+import { Text, View, Button, Alert, ScrollView } from "react-native";
 
 const ReviewList = ({ name, navigation }) => {
   if (movieStore.loadingreviews) return <Text>Loading...</Text>;
@@ -17,16 +17,19 @@ const ReviewList = ({ name, navigation }) => {
   const movieFound = movieStore.movies.find((m) => m.name === name);
   return (
     <View>
-      <Button
-        onPress={() =>
-          navigation.navigate("New Review Form", { movieId: movieFound.id })
-        }
-        title="Add Review"
-        color="#8d063e"
-      >
-        Add Review!
-      </Button>
-      <List>{reviewList}</List>
+      <ScrollView>
+        <Button
+          onPress={() =>
+            navigation.navigate("New Review Form", { movieId: movieFound.id })
+          }
+          title="Add Review"
+          color="#8d063e"
+        >
+          Add Review!
+        </Button>
+
+        <List>{reviewList}</List>
+      </ScrollView>
     </View>
   );
 };

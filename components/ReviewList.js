@@ -5,21 +5,24 @@ import { observer } from "mobx-react";
 import React from "react";
 import { Text, View, Button, Alert } from "react-native";
 
-const ReviewList = ({  name ,navigation }) => {
+const ReviewList = ({ name, navigation }) => {
   if (movieStore.loadingreviews) return <Text>Loading...</Text>;
 
-  const movieReviews = movieStore.reviews.filter((review) =>(review.movie.name === name));
+  const movieReviews = movieStore.reviews.filter(
+    (review) => review.movie.name === name
+  );
   const reviewList = movieReviews.map((review) => (
     <ReviewItem review={review} key={review.id} navigation={navigation} />
   ));
-  const movieFound = movieStore.movies.find(m => m.name===name);
+  const movieFound = movieStore.movies.find((m) => m.name === name);
   return (
     <View>
-
       <Button
-        onPress={() => navigation.navigate("New Review Form", {movieId : movieFound.id})}
+        onPress={() =>
+          navigation.navigate("New Review Form", { movieId: movieFound.id })
+        }
         title="Add Review"
-        color="#e4bad4"
+        color="#8d063e"
       >
         Add Review!
       </Button>

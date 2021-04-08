@@ -88,7 +88,7 @@ const SignUpScreen = ({ navigation }) => {
               },
             ]}
           >
-            <Text style={[styles.textSign, { color: "#00937" }]}>Sign Up</Text>
+            <Text style={[styles.textSign, { color: "#8d063e" }]}>Sign Up</Text>
           </TouchableOpacity>
           <TouchableOpacity
             onPress={() => navigation.navigate("SignInScreen")}
@@ -101,7 +101,7 @@ const SignUpScreen = ({ navigation }) => {
               },
             ]}
           >
-            <Text style={[styles.textSign, { color: "#00937" }]}>Sign In</Text>
+            <Text style={[styles.textSign, { color: "#8d063e" }]}>Sign In</Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -114,7 +114,7 @@ export default SignUpScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#009387",
+    backgroundColor: "#8d063e",
   },
   header: {
     flex: 1,
@@ -136,7 +136,7 @@ const styles = StyleSheet.create({
     fontSize: 30,
   },
   text_footer: {
-    color: "#05375a",
+    color: "#8d063e",
     fontSize: 18,
   },
   action: {

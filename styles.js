@@ -1,15 +1,14 @@
 import styled from "styled-components/native";
 
 export const HomeBackground = styled.ImageBackground`
-  flex: 1;
   width: 100%;
   height: 100%;
+  background-color: blue;
 `;
 
 export const MovieImage = styled.Image`
-  width: 120;
-  height: 120;
-  margin-left: 20;
+  width: 125;
+  height: 125;
 `;
 
 export const TopStyling = styled.View`
@@ -44,12 +43,13 @@ export const ButtonStyled = styled.Text`
 
 export const MovieItemStyled = styled.Text`
   /* color: ${(props) => props.theme.mainColor}; */
-  color: darkred;
+  color: #8d063e;
   font-size: 18;
   margin-top: 10;
   margin-bottom: 10;
   margin-left: 10;
   width: 100%;
+  font-weight: bold;
 `;
 
 // export const CreateButtonStyled = styled.Button`
@@ -82,8 +82,10 @@ export const MovieDetailImage = styled.Image`
 
 export const MovieDetailTitle = styled.Text`
   font-weight: bold;
-  font-size: 40;
+  font-size: 25;
   text-align: center;
 `;
 
-export const MovieContent = styled.Text``;
+export const MovieContent = styled.Text`
+  margin-top: 5;
+`;

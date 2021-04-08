@@ -17,14 +17,12 @@ import {
 
 const MovieItem = ({ movie, navigation }) => {
   return (
-    <>
-      <ListItem
-        onPress={() => navigation.navigate("Movie Details", { movie: movie })}
-      >
-        <MovieImage source={{ uri: movie.image }} />
-        <MovieItemStyled>{movie.name}</MovieItemStyled>
-      </ListItem>
-    </>
+    <ListItem
+      onPress={() => navigation.navigate("Movie Details", { movie: movie })}
+    >
+      <MovieImage source={{ uri: movie.image }} />
+      <MovieItemStyled>{movie.name}</MovieItemStyled>
+    </ListItem>
   );
   // return <Text> movie Item </Text>;
 };

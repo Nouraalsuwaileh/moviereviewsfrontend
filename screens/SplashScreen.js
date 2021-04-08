@@ -22,41 +22,40 @@ import { HomeBackground } from "../styles";
 const SplashScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
-      <View style={styles.container}>
-        <View style={styles.header}>
-          <HomeBackground
-            source={require("../image/background.jpg")}
-            // style={styles.logo}
-            // resizeMode="stretch"
-          />
-        </View>
+      {/* <View style={styles.container}> */}
+      {/* <View style={styles.header}> */}
+      <View style={styles.backgroundContainer}>
+        <Image
+          style={styles.bakcgroundImage}
+          source={require("../image/background.jpg")}
+          // style={styles.logo}
+          // resizeMode="stretch"
+        />
+        {/* </View> */}
+        {/* </View> */}
       </View>
 
       <View style={styles.container}>
-        <View style={styles.footer}>
-          {/* <Text style={styles.title}>Movie Reviews For Every One</Text> */}
-          <Text style={styles.text}>Sign in with account</Text>
+        {/* <View style={styles.footer}> */}
+        {/* <Text style={styles.title}>Movie Reviews For Every One</Text> */}
+        {/* <Text style={styles.text}>Sign in with account</Text> */}
+        <View style={styles.Button}>
+          <TouchableOpacity onPress={() => navigation.navigate("Movie List")}>
+            <Text style={styles.textSign}>Read Reviews</Text>
+          </TouchableOpacity>
+        </View>
 
-          <View style={styles.Button}>
-            <TouchableOpacity onPress={() => navigation.navigate("Movie List")}>
-              <Text style={styles.textSign}>Read Reviews</Text>
-            </TouchableOpacity>
-          </View>
+        <View style={styles.Button}>
+          <TouchableOpacity onPress={() => navigation.navigate("SignInScreen")}>
+            <Text style={styles.textSign}>Post your own!</Text>
+          </TouchableOpacity>
+        </View>
 
-          <View style={styles.Button}>
-            <TouchableOpacity
-              onPress={() => navigation.navigate("SignInScreen")}
-            >
-              <Text style={styles.textSign}>Post your own!</Text>
-            </TouchableOpacity>
-          </View>
-
-          {/* <TouchableOpacity onPress={}>
+        {/* <TouchableOpacity onPress={}>
             <LinearGradient>
               <Text>Get Started</Text>
             </LinearGradient>
           </TouchableOpacity> */}
-        </View>
       </View>
     </View>
   );
@@ -71,37 +70,56 @@ const height_logo = height * 0.28;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#009387",
+    // backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  backgroundContainer: {
+    flex: 1,
+    position: "absolute",
+    top: 0,
+    left: 0,
+    width: "100%",
+    height: "100%",
+  },
+  bakcgroundImage: {
+    flex: 1,
+    width: null,
+    height: null,
   },
   header: {
-    flex: 2,
+    flex: 1,
     justifyContent: "center",
     alignItems: "center",
+    // height: 200,
   },
-  footer: {
-    flex: 1,
-    backgroundColor: "#fff",
-    borderTopLeftRadius: 30,
-    borderTopRightRadius: 30,
-    paddingVertical: 50,
-    paddingHorizontal: 30,
-  },
+
   logo: {
     width: height_logo,
     height: height_logo,
   },
+
   title: {
     color: "#05375a",
     fontSize: 30,
     fontWeight: "bold",
   },
   text: {
-    color: "grey",
+    color: "white",
     marginTop: 5,
+    fontSize: 20,
+    fontWeight: "bold",
+    marginLeft: 20,
   },
-  button: {
+  Button: {
     alignItems: "flex-end",
-    marginTop: 30,
+    margin: 10,
+    padding: 7,
+    borderWidth: 3,
+    borderRadius: 10,
+    borderColor: "#324e73",
+    backgroundColor: "#99a7b9",
+    marginLeft: 50,
   },
   signIn: {
     width: 150,
@@ -112,7 +130,9 @@ const styles = StyleSheet.create({
     flexDirection: "row",
   },
   textSign: {
-    color: "black",
+    color: "#324e73",
     fontWeight: "bold",
+    marginTop: 5,
+    fontSize: 25,
   },
 });
